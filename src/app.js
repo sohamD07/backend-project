@@ -21,11 +21,13 @@ app.use(cookieParser());
 // routes
 import subscriptionRouter from "./routes/subscription.routes.js";
 import userRouter from "./routes/user.routes.js";
+import videoRouter from "./routes/video.routes.js";
 
 
 // routes declaration
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/subscriptions", subscriptionRouter);
+app.use("/api/v1/videos", videoRouter)
 
 // http://localhost:8080/api/v1/users/register
 
