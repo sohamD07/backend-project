@@ -1,5 +1,6 @@
 
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema({
@@ -76,9 +77,6 @@ userSchema.methods.generateRefreshToken = function () {
     return jwt.sign(
         {
             _id: this._id,
-            email: this.email,
-            username: this.username,
-            fullName: this.fullName
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
