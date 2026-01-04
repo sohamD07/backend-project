@@ -19,11 +19,13 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 // routes
+import subscriptionRouter from "./routes/subscription.routes.js";
 import userRouter from "./routes/user.routes.js";
 
 
 // routes declaration
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/subscriptions", subscriptionRouter);
 
 // http://localhost:8080/api/v1/users/register
 
